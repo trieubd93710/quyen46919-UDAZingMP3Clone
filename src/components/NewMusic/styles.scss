@@ -1,0 +1,88 @@
+@import "../../../assets/scss/mixins/index.scss";
+@import "../../../assets/scss/variables/index.scss";
+
+.newmusic {
+  color: $white;
+  max-width: calc(100% - 240px);
+  padding: 40px;
+  &__heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    &-name {
+      font-size: 20px;
+    }
+    &-all {
+      font-size: 12px;
+      display: flex;
+      align-items: center;
+      position: relative;
+    }
+    &-icon {
+      font-size: 20px;
+      margin-left: 5px;
+      position: absolute;
+      right: -50%;
+      top: 50%;
+      transform: translate(30%, -45%);
+    }
+  }
+  &__list {
+    display: flex;
+    width: 100%;
+    gap: 30px;
+  }
+}
+.newmusic__item {
+  width: calc(100% / 3);
+  display: flex;
+  background-color: $bg-secondary;
+  padding: 13px;
+  border-radius: 7px;
+  &-thum {
+    width: 120px;
+    height: 100%;
+    border-radius: inherit;
+    margin-right: 10px;
+  }
+  &-group {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+  }
+  &-name {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.38;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+  }
+  &-singer {
+    display: block;
+    font-size: 12px;
+    margin-top: 3px;
+    opacity: 0.7;
+  }
+  &-other {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    opacity: 0.7;
+  }
+  &-trending {
+    -webkit-text-stroke-width: 0.3px;
+    -webkit-text-stroke-color: rgb(255, 255, 255);
+    font-size: 40px;
+    color: transparent;
+    font-weight: 700;
+    line-height: 40px;
+  }
+  &-time {
+    font-size: 15px;
+  }
+}
