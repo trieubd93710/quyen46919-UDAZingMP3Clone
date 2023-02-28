@@ -1,0 +1,33 @@
+@import '../../../assets/scss/variables/index.scss';
+@import '../../../assets/scss/mixins/index.scss';
+
+.recentList{
+    margin-top: 40px;
+    margin-left: 300px;
+    padding: 0 50px;
+    box-sizing: border-box;
+    width: auto;
+    &__title{
+        @include  displayFlex(row,nowrap,space-between,center);
+        margin-bottom: 20px;
+        &--left{
+            font-size: 20px;
+            font-weight: 700;
+            color: $white;
+        }
+        &--right{
+            font-size: 15px;
+            font-weight: 400;
+            color: rgba($color: $white, $alpha: 0.5);
+            @include  displayFlex(row,nowrap,space-between,center);
+            cursor: pointer;
+        }
+        &--right:hover{
+            color: $purple;
+        }
+    }
+    .recent__lists{
+        @include  displayFlex(row,nowrap,space-between,center);
+        gap:10px;
+    }
+}

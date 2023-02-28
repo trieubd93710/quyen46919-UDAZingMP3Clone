@@ -1,0 +1,72 @@
+@import '../../../assets/scss/variables/index.scss';
+@import '../../../assets/scss/mixins/index.scss';
+.recentSong{   
+    min-height: 180px;
+    width: 130px;
+    &-icons{
+        display: none;
+      
+         
+        gap: 8px;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    &__img:hover &-icons{
+        @include  displayFlex(row,nowrap,space-between,center);
+    }
+    &-icon__left,   &-icon__right{
+        border-radius: 50%;
+        height: 30px;
+        width: 30px; 
+        @include  displayFlex(row,nowrap,center,center);
+
+    }
+
+    &-icon__left:hover,   &-icon__right:hover{
+        background-color: rgba($color: $white, $alpha: 0.3);
+    }
+     &-icon__center:hover{
+        opacity: 0.9;
+     }
+    &__img{
+            border-radius: 4px;
+             object-fit: cover;
+            height: 130px;
+            width: 100%;
+            position: relative;
+            @include  displayFlex(row,nowrap,center,center);
+            overflow: hidden; 
+            cursor: pointer;
+         
+            &:hover img{
+            transition: 0.7s ease;
+            transform: scale(1.1) translateZ(0)
+               
+            }
+            & img{
+            transition: 0.7s ease;
+            height: 100%;
+            width: 100%;
+            border-radius: 4px;
+            object-fit: cover; 
+           
+        }
+    }
+        
+        &__title{
+            margin-top: 10px;
+            font-weight: 600;
+            color: $white;
+             display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 2;
+            word-wrap: break-word;
+            overflow: hidden;
+            cursor: pointer;
+        }
+        &__title:hover{
+            color: $purple;
+        }
+
+}
