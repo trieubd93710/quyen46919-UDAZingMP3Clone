@@ -1,0 +1,190 @@
+@import "../../../assets/scss/mixins/index.scss";
+@import "../../../assets/scss/variables/index.scss";
+@import "../../../assets/scss/mixins/reponse.scss";
+.Headers {
+  position: fixed;
+  width: calc(100% - 240px);
+  margin-left: 240px;
+  float: right;
+  height: 70px;
+  padding: 0 60px;
+  @include displayFlex($direc: row, $justy: flex-start);
+  gap: 20px;
+  color: white;
+  background-color: rgba($color: #170f23, $alpha: 0.2);
+  @include respond(xl) {
+    width: calc(100% - 200px);
+    margin-left: 200px;
+  }
+  @include respond(lg) {
+    width: calc(100% - 90px);
+    margin-left: 100px;
+    padding-left: 20px;
+  }
+  @include respond(md) {
+    width: calc(100% - 30px);
+    margin-left: 60px;
+  }
+  @include respond(sm) {
+    width: 713px;
+    margin-left: 30px;
+  }
+  &__left {
+    @include displayFlex($direc: row);
+    gap: 22px;
+    width: 50%;
+  }
+  &__right {
+    width: 50%;
+    @include displayFlex($direc: row, $justy: flex-end);
+    gap: 10px;
+  }
+
+  &__translate {
+    @include displayFlex($direc: row);
+    margin-right: 10px;
+    gap: 24px;
+    &--left,
+    &--right,
+    &--left:focus,
+    &--right:focus {
+      padding: 0;
+      background-color: transparent;
+      color: white;
+      font-size: 18px;
+      @include buttonBorder();
+    }
+  }
+  &__input {
+    @include displayFlex($direc: row);
+    @include padding($padding: 0 18px 0 0);
+    width: 410px;
+    height: 39px;
+    border-radius: 50px;
+    color: $white;
+    background-color: rgba($color: #2f2739, $alpha: 0.5);
+    @include respond(md) {
+      width: 200px;
+    }
+    @include respond(sm) {
+      width: 100px;
+    }
+    &--search,
+    &--search:focus {
+      width: 40px;
+      padding: 0;
+      font-size: large;
+      color: $white;
+      background-color: transparent;
+      @include buttonBorder();
+    }
+    &--box {
+      flex-grow: 1;
+      height: 100%;
+      width: 100%;
+      @include buttonBorder();
+      color: $white;
+      font-size: medium;
+      background-color: rgba($color: #2f2739, $alpha: 0.2);
+      &::placeholder {
+        color: $white;
+      }
+    }
+  }
+  &__inputForcus {
+    position: relative;
+    width: 410px;
+    height: 39px;
+    &--input {
+      @include displayFlex($direc: row);
+      width: 100%;
+      @include padding($padding: 0 18px 0 0);
+      height: 39px;
+      border-radius: 50px;
+      color: $white;
+      background-color: transparent;
+    }
+    &--search,
+    &--search:focus {
+      width: 40px;
+      padding: 0;
+      font-size: large;
+      color: $white;
+      background-color: transparent;
+      @include buttonBorder();
+    }
+    &--box {
+      flex-grow: 1;
+      width: 100%;
+      height: 100%;
+      @include buttonBorder();
+      color: $white;
+      font-size: medium;
+      background-color: transparent;
+      &::placeholder {
+        color: $white;
+      }
+    }
+
+    &--posi {
+      position: absolute;
+      top: 0;
+      @include padding($padding: 0 10px);
+      width: 100%;
+      height: auto;
+      background-color: #34224f;
+      border-radius: 20px;
+    }
+  }
+  &__list {
+    width: 100%;
+    padding-left: 20px;
+    box-sizing: border-box;
+    &--suggest {
+      margin-top: 10px;
+    }
+    &--title {
+      font-size: 14px;
+      font-weight: 700;
+      color: $white;
+    }
+    &--suggest li,
+    a {
+      @include displayFlex($justy: flex-start, $direc: row);
+      height: 40px;
+      list-style: none;
+      font-size: 14px;
+      font-weight: 400;
+      border-radius: 10px;
+      color: $white;
+    }
+    &--suggest li:hover {
+      background-color: rgba($color: #271545, $alpha: 0.5);
+    }
+  }
+  &__dowloadTitle {
+    color: $white;
+    width: 180px;
+  }
+  &__dowload,
+  &__dowload:focus {
+    @include displayFlex($direc: row);
+    gap: 5px;
+    width: 180px;
+    height: 39px;
+    @include buttonBorder();
+    border-radius: 50px;
+    color: $violet;
+    background-color: rgba($color: #2f2739, $alpha: 1);
+    &:hover {
+      color: darken($color: $violet, $amount: 10);
+    }
+  }
+  &__icon {
+    @include displayFlex($direc: row);
+    gap: 12px;
+    &--wrap {
+      @include circles();
+    }
+  }
+}

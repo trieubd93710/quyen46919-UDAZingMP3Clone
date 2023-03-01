@@ -1,0 +1,29 @@
+$screen-sm: 779px;
+$screen-md: 900px;
+$screen-lg: 1010px;
+$screen-xl: 1234px;
+
+$content-width-sm: 540px;
+$content-width-md: 720px;
+$content-width-lg: 960px;
+$content-width-xl: 1140px;
+
+@mixin respond($size) {
+  @if $size == sm {
+    @media (max-width: $screen-sm) {
+      @content;
+    }
+  } @else if $size == md {
+    @media (max-width: $screen-md) {
+      @content;
+    }
+  } @else if $size == lg {
+    @media (max-width: $screen-lg) {
+      @content;
+    }
+  } @else if $size == xl {
+    @media (max-width: $screen-xl) {
+      @content;
+    }
+  }
+}

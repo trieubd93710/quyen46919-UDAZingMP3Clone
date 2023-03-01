@@ -1,5 +1,5 @@
 import React from "react";
-import Headers from "../Header";
+import Headers from "../../components/Header";
 import "./styles.scss";
 
 Home.propTypes = {};
