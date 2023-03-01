@@ -1,15 +1,13 @@
-import React from "react";
-import NewMusic from "../../components/NewMusic";
-import "./styles.scss";
-
-Home.propTypes = {};
+import React from 'react'
+import NewMusic from '../../components/NewMusic'
+import './styles.scss'
 
 function Home(props) {
   return (
-    <div className="home">
+    <div className='home'>
       <NewMusic />
     </div>
-  );
+  )
 }
 
-export default Home;
+export default Home
