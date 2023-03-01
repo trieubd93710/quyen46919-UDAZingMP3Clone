@@ -1,5 +1,6 @@
 import 'swiper/css'
 import './styles.scss'
+
 import { AiOutlineRight } from 'react-icons/ai'
 import { CgPlayButtonO } from 'react-icons/cg'
 import { Swiper, SwiperSlide } from 'swiper/react'
@@ -63,7 +64,36 @@ export default function NewMusic() {
           </span>
         </p>
       </div>
-      <Swiper className='' spaceBetween={20} slidesPerView={3} autoplay={{ delay: 6000, disableOnInteraction: false }}>
+      <Swiper
+        breakpoints={{
+          1024: {
+            slidesPerView: 3,
+            spaceBetweenSlides: 150
+          },
+          768: {
+            slidesPerView: 2,
+            spaceBetweenSlides: 200
+          },
+          640: {
+            slidesPerView: 1,
+            spaceBetweenSlides: 200
+          },
+          320: {
+            slidesPerView: 1,
+            spaceBetween: 20
+          },
+          480: {
+            slidesPerView: 1,
+            spaceBetween: 30
+          }
+        }}
+        spaceBetween={20}
+        slidesPerView={3}
+        autoplay={{
+          delay: 6000,
+          disableOnInteraction: false
+        }}
+      >
         {listMusic.map((music) => (
           <SwiperSlide key={music.thumbnail} className='newmusic__list'>
             <div className='newmusic__item'>

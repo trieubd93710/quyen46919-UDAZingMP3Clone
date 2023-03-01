@@ -3,9 +3,19 @@
 
 .newmusic {
   color: $white;
-  margin-left: calc(100% - 1280px);
-  max-width: calc(100% - 240px);
-  padding: 40px;
+  position: absolute;
+  left: $menuWidth;
+  max-width: calc(100% - $menuWidth);
+  width: 100%;
+  padding: 50px;
+  @include maxWidth(1125px) {
+    left: $menuWidthRes;
+    max-width: calc(100% - $menuWidthRes);
+  }
+  @include maxWidth(530px) {
+    left: 0;
+    max-width: 100%;
+  }
   &__heading {
     display: flex;
     justify-content: space-between;
@@ -18,6 +28,11 @@
       font-size: 12px;
       display: flex;
       align-items: center;
+      font-weight: 500;
+      cursor: pointer;
+      &:hover {
+        color: $green;
+      }
     }
     &-icon {
       font-size: 20px;
@@ -26,23 +41,22 @@
 }
 .newmusic__item {
   display: flex;
-  background-color: $bg-secondary;
+  background-color: $bg-item;
   padding: 13px;
   border-radius: 7px;
   cursor: pointer;
   &-thum {
     width: 100%;
     height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease-in-out;
     &:hover {
       filter: brightness(60%);
       transform: scale(1.2);
-      transition: transform 0.7s ease-in-out;
     }
   }
   &-group {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    @include displayFlex(column, unknow, space-between, unknow);
     width: 100%;
   }
   &-img {
@@ -77,15 +91,15 @@
     font-size: 12px;
     margin-top: 3px;
     opacity: 0.7;
+    cursor: pointer;
+    font-weight: 400;
     &:hover {
-      color: $gray;
-      cursor: pointer;
+      color: $green;
+      opacity: 1;
     }
   }
   &-other {
-    display: flex;
-    justify-content: space-between;
-    align-items: end;
+    @include displayFlex(row, unknow, space-between, end);
     opacity: 0.7;
   }
   &-trending {
